@@ -15,6 +15,12 @@ inquirer.prompt([
 
 .then ((answers) => {
 
+    if (!answers.pergunta1 || !answers.pergunta2) {
+
+        throw new Error('O nome e a idade são obrigatórios')
+        
+    }
+
     const response = `O seu nome é ${answers.pergunta1} e você tem ${answers.pergunta2} anos`
     console.log(chalk.bgYellow.black(response))
 })
